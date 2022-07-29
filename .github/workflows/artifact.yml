@@ -19,6 +19,7 @@ jobs:
 
   do-something:
     needs: generate-file
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Read file
