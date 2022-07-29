@@ -9,15 +9,10 @@ jobs:
   do-something:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: create file
-      run: |
-        cd ./scripts
-        chmod +x *.sh
-        ./compile.sh
-      shell: bash
-    - name: read file
-      run: |
-        cd ./scripts
-        ls
-      shell: bash
+      - uses: actions/checkout@v2
+      - name: List all the project
+        run: |
+          ls
+        shell: bash
+      - name: Print branch name
+        run: echo running on branch ${GITHUB_REF##*/}
