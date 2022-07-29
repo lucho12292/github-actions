@@ -6,23 +6,16 @@ env:
   FILE_NAME: hello-server
 
 jobs:
-  generate-file:
+  do-something:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Run compile.sh
+    - name: Read file
       run: |
         cd ./scripts
         chmod +x *.sh
         ./compile.sh
       shell: bash
-
-  do-something:
-    needs: generate-file
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: Read file
       run: |
         cd ./scripts
         ls
