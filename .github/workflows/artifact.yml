@@ -10,12 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Read file
+    - name: create file
       run: |
         cd ./scripts
         chmod +x *.sh
         ./compile.sh
       shell: bash
+    - name: read file
       run: |
         cd ./scripts
         ls
+      shell: bash
